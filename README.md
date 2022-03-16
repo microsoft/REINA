@@ -1,7 +1,7 @@
 # REINA
 Implementation of the following paper:
 ## Training Data is More Valuable than You Think: A Simple and Effective Method by Retrieving from Training Data
-Shuohang Wang (shuowa@microsoft.com), Yichong Xu, Yuwei Fang, Yang Liu, Siqi Sun, Ruochen Xu, Chenguang Zhu, Michael Zeng
+Shuohang Wang (shuowa at microsoft.com), Yichong Xu, Yuwei Fang, Yang Liu, Siqi Sun, Ruochen Xu, Chenguang Zhu, Michael Zeng
 
 
 
