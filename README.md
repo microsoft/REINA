@@ -20,6 +20,12 @@ docker run --gpus all -it --rm --shm-size 10g -w /home/reina/src -v ${PWD}/REINA
 docker run --gpus all -it --rm --shm-size 10g -w /home/reina/src -v ${PWD}/REINA:/home/reina shuohang/pytorch:reina /bin/bash -c "export HF_DATASETS_CACHE=/home/reina/data; export TRANSFORMERS_CACHE=/home/reina/cache; python -m torch.distributed.launch --nproc_per_node=8 run_summarization.py --report_to none  --save_strategy epoch --model_name_or_path google/pegasus-large --dataset_name xsum  --do_train   --do_eval --do_predict  --per_device_train_batch_size=2 --gradient_accumulation_steps 2 --per_device_eval_batch_size=4 --predict_with_generate --output_dir /home/reina/output --overwrite_output_dir --text_column document --summary_column summary  --num_train_epochs 3 --logging_strategy epoch --evaluation_strategy epoch --load_best_model_at_end --max_target_length 64 --val_max_target_length 64 --learning_rate 0.00005  --train_file /home/reina/data/reina/xsum/train.json --validation_file /home/reina/data/reina/xsum/validation.json --test_file /home/reina/data/reina/xsum/test.json"
 ```
 
+### Related project
+REINA is integrated into the project of Human Parity on CommonsenseQA
+
+https://github.com/microsoft/KEAR
+
+
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
